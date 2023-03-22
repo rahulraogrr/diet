@@ -1,2 +1,2 @@
-# diet
+# Daily Diet Monitor
 Daily Diet Monitor
