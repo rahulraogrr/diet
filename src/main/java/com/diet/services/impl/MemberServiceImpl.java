@@ -6,9 +6,10 @@ import com.diet.services.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
-@Service
+@Service("MemberServiceImpl")
 @RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService {
     private final MemberRepository memberRepository;
@@ -36,5 +37,10 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public Optional<Member> getMemberById(Integer id) {
         return memberRepository.findById(id);
+    }
+
+    @Override
+    public List<Member> getAllMembers() {
+        return memberRepository.findAll();
     }
 }

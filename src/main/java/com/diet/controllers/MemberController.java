@@ -9,11 +9,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RestController
 @RequestMapping("/api/v1/members")
 @RequiredArgsConstructor
 public class MemberController {
-
     private final MemberService memberService;
 
     private final MemberDTOMapper memberDTOMapper;
@@ -40,6 +42,14 @@ public class MemberController {
                     memberService.getMemberById(id)
                             .orElseThrow(()-> new RuntimeException("Member Not Found"))),
                 HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<MemberDto>> getAllMembers(){
+        return new ResponseEntity<>(memberService.getAllMembers()
+                .stream()
+                .map(memberDTOMapper)
+                .collect(Collectors.toList()), HttpStatus.OK);
     }
 
 }
