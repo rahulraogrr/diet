@@ -1,6 +1,7 @@
 package com.diet.controllers;
 
 import com.diet.dto.MemberDto;
+import com.diet.exceptions.custom.NotFoundException;
 import com.diet.exceptions.models.BadRequestError;
 import com.diet.exceptions.models.InternalServerError;
 import com.diet.exceptions.models.NotFoundError;
@@ -70,7 +71,7 @@ public class MemberController {
     public ResponseEntity<MemberDto> getMember(@PathVariable Integer id){
         return new ResponseEntity<>(memberDTOMapper.apply(
                     memberService.getMemberById(id)
-                            .orElseThrow(()-> new RuntimeException("Member Not Found"))),
+                            .orElseThrow(()-> new NotFoundException("Member Not Found"))),
                 HttpStatus.OK);
     }
 

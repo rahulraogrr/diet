@@ -1,6 +1,7 @@
 package com.diet.services.impl;
 
 import com.diet.entities.Member;
+import com.diet.exceptions.custom.NotFoundException;
 import com.diet.repositories.MemberRepository;
 import com.diet.services.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,7 @@ public class MemberServiceImpl implements MemberService {
     public Member updateMember(Integer id, Member member) {
 
         Member existingMember = getMemberById(id)
-                .orElseThrow(() -> new RuntimeException("Member Not Found"));
+                .orElseThrow(() -> new NotFoundException("Member Not Found"));
 
         existingMember.setFirstName(member.getFirstName());
         existingMember.setLastName(member.getLastName());
