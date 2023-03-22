@@ -46,8 +46,7 @@ public class MemberController {
 
     @GetMapping
     public ResponseEntity<List<MemberDto>> getAllMembers(){
-        return new ResponseEntity<>(memberService.getAllMembers()
-                .stream()
+        return new ResponseEntity<>(memberService.getAllMembers().stream()
                 .map(memberDTOMapper)
                 .collect(Collectors.toList()), HttpStatus.OK);
     }
