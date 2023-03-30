@@ -6,7 +6,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,15 +29,15 @@ public class Member implements Serializable {
     private String lastName;
 
     @Temporal(TemporalType.DATE)
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, targetEntity = Statistics.class, orphanRemoval = true)
     @JoinColumn(name = "member_id", referencedColumnName = "id")
     private Set<Statistics> statistics = new HashSet<>();
 
     @CreationTimestamp
-    private Date createTs;
+    private LocalDateTime createTs;
 
     @UpdateTimestamp
-    private Date updateTs;
+    private LocalDateTime updateTs;
 }

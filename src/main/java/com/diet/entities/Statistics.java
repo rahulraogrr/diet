@@ -6,7 +6,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -22,7 +23,7 @@ public class Statistics implements Serializable {
     private Long id;
 
     @Temporal(TemporalType.DATE)
-    private Date dietDate;
+    private LocalDate dietDate;
 
     private Float water;
 
@@ -38,8 +39,8 @@ public class Statistics implements Serializable {
     private Status overallStatus;
 
     @CreationTimestamp
-    private Date createTs;
+    private LocalDateTime createTs;
 
     @UpdateTimestamp
-    private Date updateTs;
+    private LocalDateTime updateTs;
 }

@@ -8,7 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * A DTO for the {@link Statistics} entity
@@ -29,18 +29,15 @@ public class StatisticsDto implements Serializable {
     @Schema(
             title = "dietDate",
             name = "dietDate",
-            description = "Diet Date",
-            example = "2023-03-22",
-            required = true
+            description = "Diet Date"
     )
-    private final Date dietDate;
+    private final LocalDate dietDate;
 
     @Schema(
             title = "water",
             name = "water",
             description = "water in ml",
-            example = "1000",
-            required = true
+            example = "1000"
     )
     private final Float water;
 
@@ -48,8 +45,7 @@ public class StatisticsDto implements Serializable {
             title = "walk",
             name = "walk",
             description = "walk in km",
-            example = "1",
-            required = true
+            example = "1"
     )
     private final Float walk;
 
@@ -57,8 +53,7 @@ public class StatisticsDto implements Serializable {
             title = "elliptical",
             name = "elliptical",
             description = "Elliptical in minutes",
-            example = "10",
-            required = true
+            example = "10"
     )
     private final Float elliptical;
 
@@ -66,8 +61,7 @@ public class StatisticsDto implements Serializable {
             title = "rowingMachine",
             name = "rowingMachine",
             description = "Rowing Machine in minutes",
-            example = "10",
-            required = true
+            example = "10"
     )
     private final Float rowingMachine;
 
@@ -75,8 +69,7 @@ public class StatisticsDto implements Serializable {
             title = "weight",
             name = "weight",
             description = "Weight in kg",
-            example = "90",
-            required = true
+            example = "90"
     )
     private final Float weight;
 
@@ -86,8 +79,7 @@ public class StatisticsDto implements Serializable {
             description = "Overall Status",
             example = "NO",
             enumAsRef = true,
-            implementation = Status.class,
-            required = true
+            implementation = Status.class
     )
     private final Status overallStatus;
 }

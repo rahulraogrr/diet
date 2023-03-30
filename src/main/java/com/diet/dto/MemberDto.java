@@ -7,7 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Set;
 
 /**
@@ -30,8 +30,7 @@ public class MemberDto implements Serializable {
             title = "firstName",
             name = "firstName",
             description = "First Name",
-            example = "Rahul Rao",
-            required = true
+            example = "Rahul Rao"
     )
     private final String firstName;
 
@@ -39,8 +38,7 @@ public class MemberDto implements Serializable {
             title = "lastName",
             name = "lastName",
             description = "Last Name",
-            example = "Gonda",
-            required = true
+            example = "Gonda"
     )
     private final String lastName;
 
@@ -48,16 +46,14 @@ public class MemberDto implements Serializable {
             title = "dateOfBirth",
             name = "dateOfBirth",
             description = "Date Of Birth",
-            example = "1989-03-25",
-            required = true
+            example = "1989-03-25"
     )
-    private final Date dateOfBirth;
+    private final LocalDate dateOfBirth;
 
     @Schema(
             title = "dietStats",
             name = "dietStats",
-            description = "Statistics table list",
-            required = true
+            description = "Statistics table list"
     )
     private final Set<StatisticsDto> dietStats;
 }
