@@ -28,6 +28,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Tag(name = "members", description = "MemberController")
 public class MemberController {
+
     private final MemberService memberService;
     private final MemberDTOMapper memberDTOMapper;
     private final MemberMapper memberMapper;
@@ -70,8 +71,7 @@ public class MemberController {
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<MemberDto> getMember(@PathVariable Integer id){
         return new ResponseEntity<>(memberDTOMapper.apply(
-                    memberService.getMemberById(id)
-                            .orElseThrow(()-> new NotFoundException("Member Not Found"))),
+                memberService.getMemberById(id).orElseThrow(()-> new NotFoundException("Member Not Found"))),
                 HttpStatus.OK);
     }
 

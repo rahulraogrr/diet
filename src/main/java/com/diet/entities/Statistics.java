@@ -1,5 +1,6 @@
 package com.diet.entities;
 
+import com.diet.enums.YesNo;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -36,7 +37,7 @@ public class Statistics implements Serializable {
     private Float weight;
 
     @Enumerated(EnumType.STRING)
-    private Status overallStatus;
+    private YesNo allActivitiesCompleted;
 
     @CreationTimestamp
     private LocalDateTime createTs;

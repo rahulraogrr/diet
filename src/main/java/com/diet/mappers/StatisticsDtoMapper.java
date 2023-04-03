@@ -16,7 +16,7 @@ public class StatisticsDtoMapper implements Function<Statistics, StatisticsDto> 
                 .walk(statistics.getWalk())
                 .dietDate(statistics.getDietDate())
                 .elliptical(statistics.getElliptical())
-                .overallStatus(statistics.getOverallStatus())
+                .allActivitiesCompleted(statistics.getAllActivitiesCompleted())
                 .rowingMachine(statistics.getRowingMachine())
                 .weight(statistics.getWeight())
                 .build();

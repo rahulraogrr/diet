@@ -1,4 +1,4 @@
-package com.diet.entities;
+package com.diet.enums;
 
 /**
  * User Account Status

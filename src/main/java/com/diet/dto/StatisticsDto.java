@@ -1,7 +1,7 @@
 package com.diet.dto;
 
 import com.diet.entities.Statistics;
-import com.diet.entities.Status;
+import com.diet.enums.YesNo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -74,12 +74,12 @@ public class StatisticsDto implements Serializable {
     private final Float weight;
 
     @Schema(
-            title = "overallStatus",
-            name = "overallStatus",
-            description = "Overall Status",
+            title = "allActivitiesCompleted",
+            name = "allActivitiesCompleted",
+            description = "All Activities Completed Yes/No",
             example = "NO",
             enumAsRef = true,
-            implementation = Status.class
+            implementation = YesNo.class
     )
-    private final Status overallStatus;
+    private final YesNo allActivitiesCompleted;
 }

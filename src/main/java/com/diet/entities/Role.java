@@ -1,5 +1,6 @@
 package com.diet.entities;
 
+import com.diet.enums.RoleNames;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,5 +19,8 @@ public class Role implements Serializable {
     private Long id;
 
     @Enumerated(EnumType.ORDINAL)
-    private UserRole name;
+    private RoleNames name;
+
+    @ManyToOne
+    private User user;
 }

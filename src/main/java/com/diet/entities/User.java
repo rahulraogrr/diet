@@ -1,9 +1,13 @@
 package com.diet.entities;
 
+import com.diet.enums.UserStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -25,6 +29,12 @@ public class User implements Serializable {
     private String email;
     private String phone;
 
+    @Temporal(TemporalType.DATE)
+    private LocalDate dateOfBirth;
+
     @Enumerated(EnumType.ORDINAL)
     private UserStatus status;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Role> roles = new HashSet<>();
 }

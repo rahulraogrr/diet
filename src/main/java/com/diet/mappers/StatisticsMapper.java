@@ -17,7 +17,7 @@ public class StatisticsMapper implements Function<StatisticsDto, Statistics> {
                     .walk(statisticsDto.getWalk())
                     .elliptical(statisticsDto.getElliptical())
                     .rowingMachine(statisticsDto.getRowingMachine())
-                    .overallStatus(statisticsDto.getOverallStatus())
+                    .allActivitiesCompleted(statisticsDto.getAllActivitiesCompleted())
                     .weight(statisticsDto.getWeight())
                     .dietDate(statisticsDto.getDietDate())
                 .build();

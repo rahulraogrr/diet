@@ -1,9 +1,9 @@
-package com.diet.entities;
+package com.diet.enums;
 
 /**
  * User Roles
  */
-public enum UserRole {
+public enum RoleNames {
 
     /**
      * This role has full access to all features and functions of the system.
